@@ -10,6 +10,10 @@ from tqdm import tqdm
 # Inicializa o cliente OpenAI
 client = initializeOpenAI()
 
+# Variável global para armazenar o último contexto e seu DataFrame
+last_context = None
+last_context_df = None
+
 # Função para obter embeddings em lote com tratamento de erros
 def get_embeddings(texts, model="text-embedding-3-small"):
     embeddings = []
@@ -24,18 +28,18 @@ def get_embeddings(texts, model="text-embedding-3-small"):
             embeddings.append([0] * 1536)  # Tamanho do embedding do modelo 'text-embedding-ada-002'
     return embeddings
 
-# Carrega e processa o CSV
+# Carrega e processa o CSV de acordo com o contexto fornecido
 def load_and_process_csv(csv_file):
     try:
-        embeddings_file = 'C:/App/data_with_embeddings.csv'
+        embeddings_file = f"C:/App/{os.path.splitext(os.path.basename(csv_file))[0]}_with_embeddings.csv"
         if os.path.exists(embeddings_file):
-            print("Carregando embeddings do contexto do arquivo CSV...")
+            print(f"Carregando embeddings do contexto do arquivo {csv_file}...")
             context_df = pd.read_csv(
                 embeddings_file,
                 converters={'embedding': json.loads}
             )
         else:
-            print("Calculando embeddings do contexto...")
+            print(f"Calculando embeddings do contexto para {csv_file}...")
             chunk_size = 1000  # Ajuste conforme necessário
             chunks = pd.read_csv(csv_file, encoding='utf-8', delimiter=';', on_bad_lines='skip', chunksize=chunk_size, low_memory=False)
 
@@ -67,7 +71,7 @@ def load_and_process_csv(csv_file):
             df_embeddings.to_csv(embeddings_file, index=False)
         return context_df
     except FileNotFoundError as e:
-        raise FileNotFoundError(f"Erro: Arquivo CSV não encontrado no caminho especificado. {str(e)}")
+        raise FileNotFoundError(f"Erro: Arquivo CSV não encontrado no caminho especificado: {csv_file}")
     except Exception as e:
         raise Exception(f"Erro ao carregar ou processar o arquivo CSV: {str(e)}")
 
@@ -101,16 +105,43 @@ def answer_context(similarity_df, top_n=5):
     except Exception as e:
         raise Exception(f"Erro ao extrair dados relevantes: {str(e)}")
 
-# Carrega o contexto uma vez
-csv_file = 'C:/App/data_exported.csv'
-context_df = load_and_process_csv(csv_file)
+# Carrega o contexto com base no parâmetro "contexto"
+def get_context_df(contexto):
+    global last_context, last_context_df
+    csv_map = {
+        'financeiro': 'C:/App/data_exported_financeiro.csv',
+        'compras': 'C:/App/data_exported_compras.csv',
+        'vendas': 'C:/App/data_exported_vendas.csv'
+    }
+
+    if contexto not in csv_map:
+        raise ValueError(f"Contexto inválido: {contexto}. Escolha entre 'financeiro', 'compras' ou 'vendas'.")
+
+    csv_file = csv_map[contexto]
+
+    # Se o contexto mudou, recarregar o CSV correspondente
+    if last_context != contexto:
+        last_context_df = load_and_process_csv(csv_file)
+        last_context = contexto
+
+    return last_context_df
 
 # Função principal que integra tudo
-def create_ai_reply(userQuestion):
+def create_ai_reply(userQuestion, contexto):
     try:
+        # Carregar o DataFrame do contexto correto
+        context_df = get_context_df(contexto)
+
+        # Gerar embedding da pergunta
         question_embedding = get_question_embedding(userQuestion)
+
+        # Calcular similaridade
         similarity_df = check_similarity(question_embedding, context_df)
+
+        # Extrair dados relevantes
         data = answer_context(similarity_df)
+
+        # Obter resposta da IA
         response = querycreator(data, userQuestion)
         return response
     except Exception as e:

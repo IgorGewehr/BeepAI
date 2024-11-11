@@ -12,9 +12,9 @@ async def testserver():
 
 
 @router.get("/askai")
-async def get_askai(userQuestion: str):
+async def get_askai(userQuestion: str, contexto: str):
     try:
-        response = create_ai_reply(userQuestion)
+        response = create_ai_reply(userQuestion, contexto)
         return {"response": response}
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=f"Erro de validação: {str(ve)}")
