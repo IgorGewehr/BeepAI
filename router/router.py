@@ -1,6 +1,6 @@
 from http.client import HTTPException
 
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, Query
 
 from openAIConfig.embeddings import create_ai_reply
 
@@ -12,9 +12,9 @@ async def testserver():
 
 
 @router.get("/askai")
-async def get_askai(userQuestion: str, contexto: str):
+async def get_askai(userQuestion: str = Query(...), context: str = Query(...)):
     try:
-        response = create_ai_reply(userQuestion, contexto)
+        response = create_ai_reply(userQuestion, context)
         return {"response": response}
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=f"Erro de validação: {str(ve)}")
