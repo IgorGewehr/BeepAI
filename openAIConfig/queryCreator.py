@@ -21,7 +21,7 @@ def querycreator(data, question):
             {'role': 'system', 'content': 'Sua resposta sobre meu comércio.'},
             {'role': 'user', 'content': query},
         ],
-        model="gpt-3.5-turbo",
+        model="gpt-4o",
         temperature=0,
     )
     iareturn = response.choices[0].message.content

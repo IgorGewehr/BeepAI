@@ -91,13 +91,14 @@ def check_similarity(question_embedding, context_df):
         raise Exception(f"Erro ao calcular similaridade: {str(e)}")
 
 # Função para extrair os dados mais relevantes com base na similaridade
-def answer_context(similarity_df, top_n=5):
+def answer_context(similarity_df, top_n=30):
     try:
         top_similar = similarity_df.head(top_n)
         if top_similar.empty:
             return "Desculpe, não foram encontrados dados relevantes para sua pergunta."
         data_columns = [col for col in top_similar.columns if col not in ['embedding', 'similarity']]
         data = top_similar[data_columns]
+        print(data.to_string(index=False))
         return data.to_string(index=False)
     except Exception as e:
         raise Exception(f"Erro ao extrair dados relevantes: {str(e)}")
@@ -108,7 +109,13 @@ def get_context_df(contexto):
     csv_map = {
         'Financeiro': 'C:/App/financeiro.csv',
         'Compras': 'C:/App/compras.csv',
-        'Vendas': 'C:/App/vendas.csv'
+        'Vendas': 'C:/App/vendas.csv',
+        'NFCes': 'C:/App/nfces.csv',
+        'Notas': "C:/App/notas.csv",
+        'Servicos': 'C:/App/servicos.csv',
+        'Pessoas': 'C:/App/pessoas.csv',
+        'Tributacao': 'C:/App/tributacao.csv',
+        'Produtos': 'C:/App/produtos.csv'
     }
 
     if contexto not in csv_map:
