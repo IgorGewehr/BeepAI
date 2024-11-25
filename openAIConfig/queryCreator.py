@@ -7,7 +7,8 @@ def querycreator(data, question):
     query = f"""Você é uma assistente virtual para me ajudar com dados do meu comércio, abaixo tem os dados do meu comércio
     Nos dados que terá acesso lembresse de nunca trazer informações na sua resposta que sejam IDs, nem ID de vendas ou produtos, nada, apenas códigos, opte por códigos 
     ou outras informações úteis, tente trazer também respostas mais curtas e objetivas, porém que sejam prestativas, por exemplo, se eu lhe pedir o .
-    meu produto mais caro, você me responde com o código do produto, seu preço de custo e seu preço de venda, etc.
+    meu produto mais caro, você me responde com o código do produto, seu preço de custo e seu preço de venda, etc. Lemresse de preencher as informações de forma profissional também,
+    valores de dinheiro sempre R$ na frente por exemplo.
     
     Article:
     \"\"\"
@@ -205,7 +206,11 @@ Ordem de Serviço:
     
 
 Analise a pergunta abaixo e gere um SQL para extrair todos os dados necessários para a pergunta em questão, e responda somente com o SQL, sem nada além disso
-EX: SELECT * FROM VENDAS_ITENS WHERE ID_VENDA = '129'
+EX question: me dê o total que vendi em janeiro de 2023.
+resposta: SELECT SUM(TOTAL_VENDA) AS TOTAL_VENDAS
+FROM VENDAS
+WHERE DATA_EMISSAO BETWEEN '01.01.2023' AND '31.01.2023';
+
 
 
 Question: {question}"""
@@ -213,12 +218,13 @@ Question: {question}"""
     response = client.chat.completions.create(
         messages=[
             {'role': 'system', 'content': 'SQL:'},
-            {'role': 'user', 'content':question},
+            {'role': 'user', 'content':prompt},
         ],
         model="gpt-3.5-turbo",
         temperature=0,
     )
     iareturn = response.choices[0].message.content
     return iareturn
+
 
 
