@@ -68,6 +68,54 @@ def get_question_embedding(userQuestion):
     except Exception as e:
         raise Exception(f"Erro ao gerar embedding da pergunta do usuário: {str(e)}")
 
+
+def check_ncm_similarity(product_name, ncm_file="C:/App/ncms_with_embeddings.pkl"):
+    """
+    Calcula a similaridade entre o nome do produto fornecido e os NCMs disponíveis no arquivo.
+
+    Args:
+        product_name (str): Nome do produto para busca.
+        ncm_file (str): Caminho para o arquivo com embeddings de NCMs.
+
+    Returns:
+        pd.DataFrame: DataFrame ordenado pela similaridade, contendo os NCMs mais relevantes.
+    """
+    try:
+        # Carregar o arquivo pickle com os NCMs
+        if not os.path.exists(ncm_file):
+            raise FileNotFoundError(f"Arquivo de NCMs com embeddings não encontrado: {ncm_file}")
+
+        print(f"Carregando NCMs do arquivo {ncm_file}...")
+        with open(ncm_file, 'rb') as f:
+            ncm_df = pickle.load(f)
+
+        # Gerar o embedding para o nome do produto
+        print(f"Calculando embedding para o produto: '{product_name}'...")
+        product_embedding = get_embeddings([product_name])[0]
+
+        # Filtrar linhas com embeddings válidos
+        valid_embeddings_df = ncm_df[
+            ncm_df['embedding'].apply(lambda x: isinstance(x, list) and len(x) == 1536)
+        ]
+
+        if valid_embeddings_df.empty:
+            raise ValueError("Nenhum embedding válido encontrado no DataFrame de NCMs.")
+
+        # Calcular similaridade
+        context_embeddings = np.vstack(valid_embeddings_df['embedding'].values)
+        similarities = cosine_similarity([product_embedding], context_embeddings).flatten()
+        valid_embeddings_df = valid_embeddings_df.copy()  # Evitar SettingWithCopyWarning
+        valid_embeddings_df['similarity'] = similarities
+        sorted_df = valid_embeddings_df.sort_values(by='similarity', ascending=False)
+
+        return sorted_df
+
+    except FileNotFoundError as e:
+        raise FileNotFoundError(f"Erro: {str(e)}")
+    except Exception as e:
+        raise Exception(f"Erro ao calcular similaridade para NCMs: {str(e)}")
+
+
 # Função para calcular a similaridade entre a pergunta e os dados
 def check_similarity(question_embedding, context_df):
     try:
