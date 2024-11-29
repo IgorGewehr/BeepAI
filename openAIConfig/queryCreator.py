@@ -1,14 +1,18 @@
 from openAIConfig.openaiInit import initializeOpenAI
+from utils import *
 
 client = initializeOpenAI()
 
 def querycreator(data, question):
 
-    query = f"""Você é uma assistente virtual para me ajudar com dados do meu comércio, abaixo tem os dados do meu comércio
+    query = f"""
+    Você é uma assistente virtual para me ajudar com dados do meu comércio, abaixo tem os dados do meu comércio
     Nos dados que terá acesso lembresse de nunca trazer informações na sua resposta que sejam IDs, nem ID de vendas ou produtos, nada, apenas códigos, opte por códigos 
     ou outras informações úteis, tente trazer também respostas mais curtas e objetivas, porém que sejam prestativas, por exemplo, se eu lhe pedir o .
     meu produto mais caro, você me responde com o código do produto, seu preço de custo e seu preço de venda, etc. Lemresse de preencher as informações de forma profissional também,
     valores de dinheiro sempre R$ na frente por exemplo.
+    
+    **Importante** CASO NÃO TENHA DADOS PARA A PERGUNTA EM QUESTÃO RESPONDER "Perdão, não consegui concluir sua pesquisa, tente um prompt diferente ou mais específico por gentileza."
     
     Article:
     \"\"\"
@@ -26,6 +30,9 @@ def querycreator(data, question):
         temperature=0,
     )
     iareturn = response.choices[0].message.content
+
+    update_ia_usage(1)
+
     return iareturn
 
 def queryNCMcreator(data, question):
@@ -51,167 +58,33 @@ def queryNCMcreator(data, question):
         temperature=0,
     )
     iareturn = response.choices[0].message.content
+
+    update_ncm_usage(1)
+
     return iareturn
 
-def interpret_question(question):
+
+def interpret_questionSQLs(question):
     prompt = f"""
-Você é um assistente que interpreta perguntas em linguagem natural e as converte em um SQL, e somente um SQL para resposta, que sera usado para uma busca
-direta no banco de dados do cliente, toda a estrutura do banco de dados do cliente está abaixo, lembrando que vocÊ só pode retornar um sql e literalmente nada a mais
-sua respost ajá vai direto para a consulta no DB.
-Abaixo estará as estruturas do banco de dados do cliente divididas por tables e seus campos, é um banco de dados firebird:
+Você é um assistente que gera SQLs compatíveis com Firebird 3.0. Responda apenas com o SQL, sem qualquer texto adicional ou explicação. 
 
-Vendas:
-	Table VENDAS
-		ID
-		VENDA
-		STATUS
-		DATA_EMISSAO (Formato ex: 30.12.2024 00:00)
-		ID_CLIENTE
-		CLIENTE_NOME
-		TOTAL_PRODUTOS
-		DESCONTO
-		TOTAL_VENDA
-	Table VENDAS_ITENS
-		ID_VENDA
-		ID_PRODUTO
-		PRODUTO_DESCRICAO
-		VALOR_UNITARIO
-		QUANTIDADE
-		VALOR_TOTAL
-	Table VENDAS_PARCELAS
-		ID_VENDA
-		ESPECIE
-		DATA
-		VENCIMENTO
-		VALOR
-		CONDICAO
+Regras:
+- Use `ROWS X` para limitar resultados, nunca `LIMIT` ou `FIRST X`.
+- Evite subconsultas no `FROM`; prefira `WITH` (CTEs) para simplificar.
+- Não use `UNION ALL`. Gere SQLs separados para múltiplas consultas.
+- Especifique as colunas no `SELECT`. Não use `SELECT *`.
+- Colunas no `GROUP BY` devem estar no `SELECT`, exceto funções agregadas.
+- Ordene por aliases definidos no `SELECT`.
 
-Compras:
-	Table COMPRAS	
-		ID
-		STATUS
-		NOTAFISCAL
-		ID_FORNECEDOR
-		FORNECEDOR_NOME
-		DATA_EMISSAO
-		DATA_RECE
-		VALOR_FRETE
-		TOTAL_PRODUTOS
-		TOTAL_NOTA
-	Table COMPRAS_ITENS
-		ID_COMPRA
-		ID_PRODUTO
-		PRODUTO_DESCRICAO
-		QUANTIDADE
-		VALOR_UNITARIO
-		VALOR_TOTAL
-	Table COMPRAS_PARCELAS
-		ID_COMPRA
-		ESPECIE
-		DATA
-		VENCIMENTO	
-		VALOR
-		CONDICAO
-
-Produtos:
-	Table PRODUTOS
-		ID
-		CODIGO
-		PRECO_VENDA
-		PRECO_CUSTO
-		ESTOQUE
-	
-Pessoas:
-	Table PESSOAS
-		ID
-		RAZAO
-		CNPJ
-		FANTASIA
-		LOGRADOURO
-		NUMERO
-		BAIRRO
-
-Financeiro:
-	Table CONTAS_PAGAR
-		ID
-		ID_NOTA (ID da compra em questão)
-		ID_PESSOA
-		ESPECIE
-		VALOR
-		DATA_EMISSAO
-		DATA_VENCIMENTO
-		DATA_PAGAMENTO
-		DESCONTO
-		ACRESCIMO
-		VALOR_PAGO
-		PAGO (Sim ou Não)
-	Table CONTAS_RECEBER
-		ID
-		ID_NOTA (ID da nota de venda)
-		ID_PESSOA
-		ESPECIE
-		VALOR
-		DATA_EMISSAO
-		DATA_VENCIMENTO
-		DATA_RECEBIMENTO
-		DESCONTO
-		ACRESCIMO
-		VALOR_RECEBIDO
-		RECEBIDO (Sim ou Não)
-	Table CAIXA
-		ID_RECEBER
-		ID_PAGAR
-		DATA
-		TIPO (Entrada ou Saida)
-		VALOR
-		SALDO
-Fiscal: 
-	Table NOTAS
-		ID
-		ID_VENDA
-		NOTAFISCAL	
-		STATUS
-		DATA_EMISSAO
-		VALOR_FRETE
-		TOTAL_PRODUTOS
-		TOTAL_NOTA
-	Table NFCE
-		ID
-		ID_VENDA
-		NOTAFISCAL	
-		STATUS
-		DATA_EMISSAO
-		TOTAL_PRODUTOS
-		TOTAL_NOTA
-Ordem de Serviço:
-	Table OS
-		ID
-		ORDEM_SERVICO
-		STATUS
-		DATA_EMISSAO
-		ID_CLIENTE
-		DEFEITO
-		RESOLUCAO
-		TOTAL_SERVICOS
-		TOTAL_PRODUTOS
-		TOTAL_OS
-	Table OS_ITENS
-		ID_OS
-		ID_PRODUTO
-		PRODUTO_DESCRICAO
-		QUANTIDADE
-		VALOR_UNITARIO
-		VALOR_TOTAL
-		
-    
-
-Analise a pergunta abaixo e gere um SQL para extrair todos os dados necessários para a pergunta em questão, e responda somente com o SQL, sem nada além disso
-EX question: me dê o total que vendi em janeiro de 2023.
-resposta: SELECT SUM(TOTAL_VENDA) AS TOTAL_VENDAS
-FROM VENDAS
-WHERE DATA_EMISSAO BETWEEN '01.01.2023' AND '31.01.2023';
-
-
+Estrutura do Banco:
+VENDAS (ID, VENDA, STATUS, DATA_EMISSAO, ID_CLIENTE, CLIENTE_NOME, TOTAL_PRODUTOS, DESCONTO, TOTAL_VENDA)
+VENDAS_ITENS (ID_VENDA, ID_PRODUTO, PRODUTO_DESCRICAO, VALOR_UNITARIO, QUANTIDADE, VALOR_TOTAL)
+VENDAS_PARCELAS (ID_VENDA, ESPECIE, DATA, VENCIMENTO, VALOR, CONDICAO)
+PRODUTOS (ID, CODIGO, PRECO_VENDA, PRECO_CUSTO, ESTOQUE, DESCRICAO)
+PESSOAS (ID, RAZAO, CNPJ, FANTASIA, LOGRADOURO, NUMERO, BAIRRO)
+CONTAS_PAGAR (ID, ID_NOTA, ID_PESSOA, ESPECIE, VALOR, DATA_EMISSAO, DATA_VENCIMENTO, DATA_PAGAMENTO, DESCONTO, ACRESCIMO, VALOR_PAGO, PAGO)
+CONTAS_RECEBER (ID, ID_NOTA, ID_PESSOA, ESPECIE, VALOR, DATA_EMISSAO, DATA_VENCIMENTO, DATA_RECEBIMENTO, DESCONTO, ACRESCIMO, VALOR_RECEBIDO, RECEBIDO)
+CAIXA (ID_RECEBER, ID_PAGAR, DATA, TIPO, VALOR, SALDO)
 
 Question: {question}"""
 
@@ -224,6 +97,10 @@ Question: {question}"""
         temperature=0,
     )
     iareturn = response.choices[0].message.content
+
+    update_ia_usage(1)
+
+
     return iareturn
 
 

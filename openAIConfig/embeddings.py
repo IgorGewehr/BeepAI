@@ -5,7 +5,11 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from openAIConfig.queryCreator import querycreator
 import pickle
+from pathlib import Path
 
+# Caminho base global
+BASE_DIR = os.getcwd()
+ncmF = f'{BASE_DIR}/ncms.pkl'
 # Inicializa o cliente OpenAI
 client = initializeOpenAI()
 
@@ -69,7 +73,8 @@ def get_question_embedding(userQuestion):
         raise Exception(f"Erro ao gerar embedding da pergunta do usuário: {str(e)}")
 
 
-def check_ncm_similarity(product_name, ncm_file="C:/App/ncms_with_embeddings.pkl"):
+
+def check_ncm_similarity(product_name, ncm_file=ncmF):
     """
     Calcula a similaridade entre o nome do produto fornecido e os NCMs disponíveis no arquivo.
 
