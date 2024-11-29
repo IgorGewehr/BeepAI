@@ -1,14 +1,11 @@
 import os
-import subprocess
-import sys
 
 def manage_main_files():
     """
     Gerencia a substituição de arquivos AppIA.exe.
     - Remove o arquivo AppIA_old.exe, se existir.
-    - Renomeia AppIA.exe para AppIA_old.exe.
+    - Renomeia AppIA.exe para AppIA_old.exe, se AppIA_new.exe existir.
     - Renomeia AppIA_new.exe para AppIA.exe.
-    - Executa o AppIA.exe atualizado.
     """
     current_dir = os.getcwd()  # Diretório atual
     main_old = os.path.join(current_dir, 'AppIA_old.exe')
@@ -16,27 +13,22 @@ def manage_main_files():
     main_main = os.path.join(current_dir, 'AppIA.exe')
 
     try:
-        # Verifica se AppIA_old.exe existe e o exclui
+        # Remove AppIA_old.exe se existir
         if os.path.exists(main_old):
             os.remove(main_old)
             print(f"{main_old} foi excluído.")
 
-        # Se AppIA_new.exe existir, atualiza os arquivos
+        # Se AppIA_new.exe existir, faça a substituição
         if os.path.exists(main_new):
+            # Verifica se AppIA.exe existe antes de renomear
             if os.path.exists(main_main):
+                # Renomeia AppIA.exe para AppIA_old.exe
                 os.rename(main_main, main_old)
                 print(f"{main_main} foi renomeado para {main_old}.")
 
+            # Renomeia AppIA_new.exe para AppIA.exe
             os.rename(main_new, main_main)
             print(f"{main_new} foi renomeado para {main_main}.")
-
-            # Executa o novo AppIA.exe
-            print(f"Executando {main_main}...")
-            subprocess.Popen([main_main], shell=True)
-
-            # Encerra o script atual
-            print("Encerrando o backend...")
-            sys.exit()
 
     except Exception as e:
         print(f"Erro ao gerenciar os arquivos: {e}")

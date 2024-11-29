@@ -25,7 +25,7 @@ def testserver():
 def get_askai(userQuestion: str = Query(...)):
     usage = read_ia_file()
     ia_cost = usage['ia']
-    if ia_cost < 10:
+    if ia_cost < 5:
         try:
             responseSql = clean_sql_response(interpret_questionSQLs(userQuestion))
             print(responseSql)
@@ -45,7 +45,7 @@ def get_askai(userQuestion: str = Query(...)):
 def get_ncm(product_name: str):
     usage = read_ia_file()
     ncm_cost = usage['ncm']
-    if ncm_cost < 50:
+    if ncm_cost < 30:
         try:
             # Calcular similaridade e obter o contexto relevante
             similarity_df = check_ncm_similarity(product_name)
