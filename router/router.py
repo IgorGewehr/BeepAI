@@ -1,16 +1,31 @@
 import os
-import sys
+import logging
 from http.client import HTTPException
 
 import firebirdsql
-from fastapi import FastAPI, APIRouter, Query
+from fastapi import APIRouter, Query
 
 from openAIConfig import querycreator
 from openAIConfig.embeddings import create_ai_reply, check_ncm_similarity
 from openAIConfig.queryCreator import queryNCMcreator, interpret_questionSQLs
 import pandas as pd
 from utils import *
-from pathlib import Path
+
+# Configuração do log para o router
+log_dir = os.path.join(os.getcwd(), "logs")
+os.makedirs(log_dir, exist_ok=True)  # Garante que o diretório de logs exista
+log_file = os.path.join(log_dir, "router_log.txt")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler(log_file, mode="a"),  # Log no arquivo
+        # logging.StreamHandler(),  # Comentar esta linha para não exibir no console
+    ],
+)
+
+logging.info("Iniciando o roteador...")
 
 BASE_DIR = os.getcwd()
 bdP = f'{BASE_DIR}/db.fdb'
@@ -19,6 +34,7 @@ router = APIRouter()
 
 @router.get('/')
 def testserver():
+    logging.info("Rota / chamada com sucesso.")
     return {"response": "Servidor testado"}
 
 @router.get("/askai")
@@ -28,16 +44,20 @@ def get_askai(userQuestion: str = Query(...)):
     if ia_cost < 5:
         try:
             responseSql = clean_sql_response(interpret_questionSQLs(userQuestion))
-            print(responseSql)
+            logging.info(f"SQL Gerado: {responseSql}")
             response = process_user_question(responseSql, userQuestion)
             return {"response": response}
         except ValueError as ve:
+            logging.error(f"Erro de validação: {ve}")
             raise HTTPException(status=400, detail=f"Erro de validação: {str(ve)}")
         except FileNotFoundError as fnf:
+            logging.error(f"Arquivo não encontrado: {fnf}")
             raise HTTPException(status=404, detail=f"Arquivo não encontrado: {str(fnf)}")
         except Exception as e:
+            logging.error(f"Erro no servidor: {e}")
             raise HTTPException(status=500, detail=f"Erro no servidor: {str(e)}")
     else:
+        logging.warning("Limite máximo de pesquisas atingido para IA.")
         return {"response": "limite máximo de pesquisas atingido"}
 
 
@@ -47,17 +67,22 @@ def get_ncm(product_name: str):
     ncm_cost = usage['ncm']
     if ncm_cost < 30:
         try:
+            logging.info(f"Iniciando busca de NCM para o produto: {product_name}")
             # Calcular similaridade e obter o contexto relevante
             similarity_df = check_ncm_similarity(product_name)
             top_ncm_data = similarity_df.head(1).to_dict('records')[0]  # Obtém a linha mais relevante
 
             # Gera a resposta do NCM
             response = queryNCMcreator(data=top_ncm_data, question=product_name)
+            logging.info(f"Resposta NCM gerada com sucesso: {response}")
             return {"ncm": response}
         except Exception as e:
+            logging.error(f"Erro ao buscar o NCM: {e}")
             raise HTTPException(status=500, detail=f"Erro ao buscar o NCM: {str(e)}")
     else:
+        logging.warning("Limite máximo de pesquisas atingido para NCM.")
         return {"response": "limite máximo de pesquisas atingido"}
+
 
 def clean_sql_response(sql_response):
     import re

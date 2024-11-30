@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76aaa2af-4909-4e2d-b63e-ddcdcf067280" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/beepIA.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppIA.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppIA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/AppIA/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/AppIA/AppIA.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/AppIA.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/AppIA/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/AppIA/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/AppIA/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/AppIA/warn-AppIA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/warn-AppIA.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/AppIA/xref-AppIA.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/xref-AppIA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/main.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/Analysis-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/EXE-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/PKG-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/PYZ-00.pyz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/PYZ-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/start_server.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/warn-start_server.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/start_server/xref-start_server.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/openAIConfig/openaiInit.py" beforeDir="false" afterPath="$PROJECT_DIR$/openAIConfig/openaiInit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router/router.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2nkaDnlxLyd7pQzKrn02f4jXYY6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.AppIA.executor&quot;: &quot;Run&quot;,
+    &quot;Python.embeddings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.firebird_con.executor&quot;: &quot;Run&quot;,
+    &quot;Python.loadData.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.queryCreator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.router.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/igorg/Downloads/API_GEMINI_PYTHON.ipynb&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\igorg\PycharmProjects\beepIA" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76aaa2af-4909-4e2d-b63e-ddcdcf067280" name="Changes" comment="" />
+      <created>1729519410750</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729519410750</updated>
+      <workItem from="1729519411764" duration="220000" />
+      <workItem from="1729530759377" duration="4218000" />
+      <workItem from="1729536206455" duration="2313000" />
+      <workItem from="1729604611323" duration="2870000" />
+      <workItem from="1729621543075" duration="7550000" />
+      <workItem from="1729648431593" duration="4952000" />
+      <workItem from="1729682049935" duration="64000" />
+      <workItem from="1729683079650" duration="2615000" />
+      <workItem from="1729690881347" duration="4088000" />
+      <workItem from="1729703061818" duration="4496000" />
+      <workItem from="1730119994925" duration="6044000" />
+      <workItem from="1730152609106" duration="15000" />
+      <workItem from="1730201323862" duration="460000" />
+      <workItem from="1730201798274" duration="4679000" />
+      <workItem from="1730224444628" duration="44000" />
+      <workItem from="1730291098063" duration="2666000" />
+      <workItem from="1730296681593" duration="1000" />
+      <workItem from="1730316149867" duration="31000" />
+      <workItem from="1730728409589" duration="2505000" />
+      <workItem from="1730740257612" duration="3000" />
+      <workItem from="1730895462034" duration="7306000" />
+      <workItem from="1730979442181" duration="3062000" />
+      <workItem from="1730983215454" duration="2240000" />
+      <workItem from="1731027388140" duration="1572000" />
+      <workItem from="1731029116689" duration="1555000" />
+      <workItem from="1731031020123" duration="635000" />
+      <workItem from="1731032215149" duration="1199000" />
+      <workItem from="1731068821046" duration="2269000" />
+      <workItem from="1731071636939" duration="923000" />
+      <workItem from="1731073679158" duration="786000" />
+      <workItem from="1731074521671" duration="2328000" />
+      <workItem from="1731093117778" duration="1766000" />
+      <workItem from="1731121108886" duration="13000" />
+      <workItem from="1731158394682" duration="1438000" />
+      <workItem from="1731264180032" duration="2420000" />
+      <workItem from="1731327575076" duration="5355000" />
+      <workItem from="1731334172703" duration="1882000" />
+      <workItem from="1731415163756" duration="3885000" />
+      <workItem from="1731447331782" duration="2108000" />
+      <workItem from="1731501408906" duration="5172000" />
+      <workItem from="1731509882402" duration="817000" />
+      <workItem from="1731523472233" duration="45000" />
+      <workItem from="1731584561348" duration="1986000" />
+      <workItem from="1731588418652" duration="24000" />
+      <workItem from="1731595209750" duration="1211000" />
+      <workItem from="1731606778625" duration="6692000" />
+      <workItem from="1731763377596" duration="2073000" />
+      <workItem from="1731812143112" duration="4000" />
+      <workItem from="1731859511139" duration="246000" />
+      <workItem from="1731896442947" duration="741000" />
+      <workItem from="1731929415750" duration="963000" />
+      <workItem from="1731930888063" duration="1820000" />
+      <workItem from="1731952604763" duration="358000" />
+      <workItem from="1732071402356" duration="2728000" />
+      <workItem from="1732074721807" duration="273000" />
+      <workItem from="1732106375480" duration="883000" />
+      <workItem from="1732111577240" duration="489000" />
+      <workItem from="1732120134697" duration="78000" />
+      <workItem from="1732120265607" duration="8000" />
+      <workItem from="1732198959888" duration="1103000" />
+      <workItem from="1732213196735" duration="115000" />
+      <workItem from="1732275015308" duration="4434000" />
+      <workItem from="1732302084668" duration="931000" />
+      <workItem from="1732533567729" duration="2547000" />
+      <workItem from="1732537267985" duration="7824000" />
+      <workItem from="1732557631837" duration="1319000" />
+      <workItem from="1732559337495" duration="3890000" />
+      <workItem from="1732570730244" duration="2000" />
+      <workItem from="1732620327998" duration="8082000" />
+      <workItem from="1732641749590" duration="96000" />
+      <workItem from="1732709677522" duration="7812000" />
+      <workItem from="1732747067621" duration="21000" />
+      <workItem from="1732795757957" duration="3734000" />
+      <workItem from="1732800343165" duration="5538000" />
+      <workItem from="1732815277669" duration="9000" />
+      <workItem from="1732879375416" duration="10098000" />
+      <workItem from="1732891457429" duration="2772000" />
+      <workItem from="1732902988554" duration="5462000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/beepIA$main.coverage" NAME="main Coverage Results" MODIFIED="1732714442379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/beepIA$queryCreator.coverage" NAME="queryCreator Coverage Results" MODIFIED="1731029071009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/openAIConfig" />
+    <SUITE FILE_PATH="coverage/beepIA$router.coverage" NAME="router Coverage Results" MODIFIED="1732621737525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/router" />
+    <SUITE FILE_PATH="coverage/beepIA$AppIA.coverage" NAME="AppIA Coverage Results" MODIFIED="1732906241288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/beepIA$firebird_con.coverage" NAME="firebird_con Coverage Results" MODIFIED="1729519468299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/beepIA$embeddings.coverage" NAME="embeddings Coverage Results" MODIFIED="1731610914593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/openAIConfig" />
+    <SUITE FILE_PATH="coverage/beepIA$loadData.coverage" NAME="loadData Coverage Results" MODIFIED="1729647435715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/openAIConfig" />
+  </component>
+</project>
