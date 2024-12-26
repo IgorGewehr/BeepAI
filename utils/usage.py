@@ -67,3 +67,45 @@ def update_ia_usage(ia_increment):
         config.write(configfile)
 
     print(f"IA atualizado: ia={new_ia}")
+
+
+def update_server_port(port):
+    """
+    Atualiza a porta do servidor no arquivo ia.ini.
+    """
+    config = configparser.ConfigParser()
+    config.read(IA_INI_FILE)
+
+    # Atualiza a seção SERVER
+    config['SERVER'] = {'port': str(port)}
+
+    with open(IA_INI_FILE, 'w') as configfile:
+        config.write(configfile)
+
+    print(f"Porta do servidor atualizada para: {port}")
+
+import uvicorn
+from fastapi import FastAPI
+import random
+import socket
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Servidor rodando em porta dinâmica"}
+
+def find_port_in_range(start=8000, end=8888):
+    """
+    Encontra uma porta livre dentro de um intervalo.
+    """
+    for _ in range(800):  # Tenta encontrar uma porta em 100 iterações
+        port = random.randint(start, end)
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            try:
+                s.bind(("", port))  # Tenta vincular a porta
+                return port  # Retorna se for bem-sucedido
+            except OSError:
+                continue  # Porta já em uso, tenta outra
+    raise RuntimeError("Não foi possível encontrar uma porta disponível no intervalo.")
+

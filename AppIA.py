@@ -38,10 +38,12 @@ app = FastAPI()
 app.include_router(router)
 
 
+
 if __name__ == "__main__":
     # Gerencia arquivos no início
     manage_main_files()
-
+    port = find_port_in_range(8000, 8888)
+    update_server_port(port)
     # Inicializa IA.INI, se necessário
     if not os.path.exists(IA_INI_FILE):
         initialize_ia_file()
@@ -50,7 +52,7 @@ if __name__ == "__main__":
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=8000,
+        port=port,
         log_level="info",
         access_log=True,
         log_config={
