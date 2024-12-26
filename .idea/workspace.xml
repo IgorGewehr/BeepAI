@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76aaa2af-4909-4e2d-b63e-ddcdcf067280" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/beepIA.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppIA.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppIA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/AppIA/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/Analysis-00.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/AppIA/AppIA.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/AppIA.pkg" afterDir="false" />
@@ -19,25 +14,9 @@
       <change beforePath="$PROJECT_DIR$/build/AppIA/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/PYZ-00.pyz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/AppIA/warn-AppIA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/warn-AppIA.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/AppIA/xref-AppIA.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/xref-AppIA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/main.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/start_server.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/warn-start_server.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/xref-start_server.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/router_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/router_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/openAIConfig/openaiInit.py" beforeDir="false" afterPath="$PROJECT_DIR$/openAIConfig/openaiInit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/usage.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/usage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +56,7 @@
     &quot;Python.router.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/igorg/Downloads/API_GEMINI_PYTHON.ipynb&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -186,6 +165,15 @@
       <workItem from="1732879375416" duration="10098000" />
       <workItem from="1732891457429" duration="2772000" />
       <workItem from="1732902988554" duration="5462000" />
+      <workItem from="1732929965303" duration="178000" />
+      <workItem from="1732977394841" duration="1200000" />
+      <workItem from="1733009760929" duration="1212000" />
+      <workItem from="1733317206271" duration="6615000" />
+      <workItem from="1733492039528" duration="5000" />
+      <workItem from="1733787304061" duration="15000" />
+      <workItem from="1733831576018" duration="4234000" />
+      <workItem from="1733849546135" duration="3698000" />
+      <workItem from="1733918904026" duration="4673000" />
     </task>
     <servers />
   </component>

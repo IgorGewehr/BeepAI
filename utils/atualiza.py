@@ -32,3 +32,4 @@ def manage_main_files():
 
     except Exception as e:
         print(f"Erro ao gerenciar os arquivos: {e}")
+#final
