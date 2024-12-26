@@ -80,3 +80,4 @@ if __name__ == "__main__":
     # Fecha o arquivo de log ao encerrar
     sys.stdout.log.close()
     sys.stderr.log.close()
+#final

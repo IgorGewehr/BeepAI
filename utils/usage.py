@@ -109,3 +109,4 @@ def find_port_in_range(start=8000, end=8888):
                 continue  # Porta já em uso, tenta outra
     raise RuntimeError("Não foi possível encontrar uma porta disponível no intervalo.")
 
+#final
