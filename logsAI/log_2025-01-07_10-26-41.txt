@@ -1,0 +1,68 @@
+Log iniciado em 2025-01-07 10:26:41
+
+Todos os prints, erros e logs estão sendo gravados em: C:\Users\igorg\PycharmProjects\BeepAI\logsAI\log_2025-01-07_10-26-41.txt
+
+Traceback (most recent call last):
+  File "C:\Users\igorg\PycharmProjects\BeepAI\AppIA.py", line 33, in <module>
+    from router import router
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\__init__.py", line 1, in <module>
+    from .router import router
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\router.py", line 8, in <module>
+    from openAIConfig import querycreator
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\__init__.py", line 1, in <module>
+    from .embeddings import get_embeddings, check_similarity, answer_context
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\embeddings.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\__init__.py", line 62, in <module>
+    from pandas.core.api import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\api.py", line 47, in <module>
+    from pandas.core.groupby import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\groupby\__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\groupby\generic.py", line 68, in <module>
+    from pandas.core.frame import DataFrame
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\frame.py", line 149, in <module>
+    from pandas.core.generic import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\generic.py", line 152, in <module>
+    from pandas.core import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\indexing.py", line 79, in <module>
+    from pandas.core.indexes.api import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\indexes\api.py", line 20, in <module>
+    from pandas.core.indexes.base import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 29, in <module>
+    from pandas._libs import (
+  File "index.pyx", line 34, in init pandas._libs.index
+  File "<frozen importlib._bootstrap>", line 1217, in _handle_fromlist
+AttributeError: partially initialized module 'pandas' has no attribute '_pandas_datetime_CAPI' (most likely due to a circular import)
+Traceback (most recent call last):
+  File "C:\Users\igorg\PycharmProjects\BeepAI\AppIA.py", line 33, in <module>
+    from router import router
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\__init__.py", line 1, in <module>
+    from .router import router
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\router.py", line 8, in <module>
+    from openAIConfig import querycreator
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\__init__.py", line 1, in <module>
+    from .embeddings import get_embeddings, check_similarity, answer_context
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\embeddings.py", line 3, in <module>
+    import pandas as pd
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\__init__.py", line 62, in <module>
+    from pandas.core.api import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\api.py", line 47, in <module>
+    from pandas.core.groupby import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\groupby\__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\groupby\generic.py", line 68, in <module>
+    from pandas.core.frame import DataFrame
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\frame.py", line 149, in <module>
+    from pandas.core.generic import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\generic.py", line 152, in <module>
+    from pandas.core import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\indexing.py", line 79, in <module>
+    from pandas.core.indexes.api import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\indexes\api.py", line 20, in <module>
+    from pandas.core.indexes.base import (
+  File "C:\Users\igorg\PycharmProjects\BeepAI\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 29, in <module>
+    from pandas._libs import (
+  File "index.pyx", line 34, in init pandas._libs.index
+  File "<frozen importlib._bootstrap>", line 1217, in _handle_fromlist
+AttributeError: partially initialized module 'pandas' has no attribute '_pandas_datetime_CAPI' (most likely due to a circular import)

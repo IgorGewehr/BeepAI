@@ -1,0 +1,4 @@
+Log iniciado em 2025-01-07 10:26:53
+
+Todos os prints, erros e logs estão sendo gravados em: C:\Users\igorg\PycharmProjects\BeepAI\logsAI\log_2025-01-07_10-26-53.txt
+

@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-def initializeOpenAI():
+def initializeOpenAI(key):
     client = OpenAI(
-        api_key='key')
+        api_key=key)
     return client

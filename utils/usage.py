@@ -1,6 +1,10 @@
 import configparser
 import os
+import random
+import socket
 
+
+key = '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'
 IA_INI_FILE = "ia.ini"
 
 def read_ia_file():
@@ -16,8 +20,25 @@ def read_ia_file():
     # Converte os valores para inteiros ou floats
     ncm = float(config['USAGE']['ncm'])
     ia = float(config['USAGE']['ia'])
+    key = str(config['USAGE']['key'])
 
-    return {'ncm': ncm, 'ia': ia}
+    return {'ncm': ncm, 'ia': ia, 'key': key}
+
+def update_server_port(port):
+    """
+    Atualiza a porta do servidor no arquivo ia.ini.
+    """
+    config = configparser.ConfigParser()
+    config.read(IA_INI_FILE)
+
+    # Atualiza a seção SERVER
+    config['SERVER'] = {'port': str(port)}
+
+    with open(IA_INI_FILE, 'w') as configfile:
+        config.write(configfile)
+
+    print(f"Porta do servidor atualizada para: {port}")
+
 
 def initialize_ia_file():
     """
@@ -26,7 +47,8 @@ def initialize_ia_file():
     config = configparser.ConfigParser()
     config['USAGE'] = {
         'ncm': '0',
-        'ia': '0'
+        'ia': '0',
+        'key': key
     }
     with open(IA_INI_FILE, 'w') as configfile:
         config.write(configfile)
@@ -67,3 +89,18 @@ def update_ia_usage(ia_increment):
         config.write(configfile)
 
     print(f"IA atualizado: ia={new_ia}")
+
+
+def find_port_in_range(start=8000, end=8888):
+    """
+    Encontra uma porta livre dentro de um intervalo.
+    """
+    for _ in range(800):  # Tenta encontrar uma porta em 100 iterações
+        port = random.randint(start, end)
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            try:
+                s.bind(("", port))  # Tenta vincular a porta
+                return port  # Retorna se for bem-sucedido
+            except OSError:
+                continue  # Porta já em uso, tenta outra
+    raise RuntimeError("Não foi possível encontrar uma porta disponível no intervalo.")

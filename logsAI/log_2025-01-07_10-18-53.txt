@@ -1,0 +1,12 @@
+Log iniciado em 2025-01-07 10:18:53
+
+Todos os prints, erros e logs estão sendo gravados em: C:\Users\igorg\PycharmProjects\BeepAI\logsAI\log_2025-01-07_10-18-53.txt
+
+Traceback (most recent call last):
+  File "C:\Users\igorg\PycharmProjects\BeepAI\AppIA.py", line 31, in <module>
+    from fastapi import FastAPI
+ModuleNotFoundError: No module named 'fastapi'
+Traceback (most recent call last):
+  File "C:\Users\igorg\PycharmProjects\BeepAI\AppIA.py", line 31, in <module>
+    from fastapi import FastAPI
+ModuleNotFoundError: No module named 'fastapi'

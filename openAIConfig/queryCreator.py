@@ -1,7 +1,15 @@
 from openAIConfig.openaiInit import initializeOpenAI
 from utils import *
 
-client = initializeOpenAI()
+
+# Chama a função read_ia_file() para obter as configurações
+config_data = read_ia_file()
+
+# Extrai a chave da API do dicionário retornado
+api_key = config_data['key']
+
+# Inicializa o cliente OpenAI com a chave da API
+client = initializeOpenAI(api_key)
 
 def querycreator(data, question):
 

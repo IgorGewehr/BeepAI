@@ -5,39 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76aaa2af-4909-4e2d-b63e-ddcdcf067280" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/beepIA.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/BeepAI.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppIA.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppIA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/AppIA/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/AppIA/AppIA.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/AppIA.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/AppIA/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/AppIA/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/AppIA/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/PYZ-00.pyz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/AppIA/warn-AppIA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/warn-AppIA.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/AppIA/xref-AppIA.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/AppIA/xref-AppIA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/main.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/start_server.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/warn-start_server.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/start_server/xref-start_server.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppIA.spec" beforeDir="false" afterPath="$PROJECT_DIR$/AppIA.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openAIConfig/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/openAIConfig/embeddings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/openAIConfig/openaiInit.py" beforeDir="false" afterPath="$PROJECT_DIR$/openAIConfig/openaiInit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openAIConfig/queryCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/openAIConfig/queryCreator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/usage.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/usage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +47,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Python.AppIA.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AppIA.executor&quot;: &quot;Debug&quot;,
     &quot;Python.embeddings.executor&quot;: &quot;Run&quot;,
     &quot;Python.firebird_con.executor&quot;: &quot;Run&quot;,
     &quot;Python.loadData.executor&quot;: &quot;Run&quot;,
@@ -77,13 +56,15 @@
     &quot;Python.router.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/igorg/Downloads/API_GEMINI_PYTHON.ipynb&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/igorg/PycharmProjects/BeepAI&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -95,8 +76,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
-        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
+        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
       </set>
     </attachedChunks>
   </component>
@@ -186,6 +167,17 @@
       <workItem from="1732879375416" duration="10098000" />
       <workItem from="1732891457429" duration="2772000" />
       <workItem from="1732902988554" duration="5462000" />
+      <workItem from="1735910119783" duration="99000" />
+      <workItem from="1735910475246" duration="2458000" />
+      <workItem from="1735913567322" duration="911000" />
+      <workItem from="1735927653203" duration="1166000" />
+      <workItem from="1736001369594" duration="445000" />
+      <workItem from="1736112821911" duration="6000" />
+      <workItem from="1736188460188" duration="578000" />
+      <workItem from="1736255735299" duration="241000" />
+      <workItem from="1736286297534" duration="261000" />
+      <workItem from="1736907538172" duration="704000" />
+      <workItem from="1736937392319" duration="1240000" />
     </task>
     <servers />
   </component>
@@ -205,6 +197,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/beepIA$main.coverage" NAME="main Coverage Results" MODIFIED="1732714442379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BeepAI$AppIA.coverage" NAME="AppIA Coverage Results" MODIFIED="1736255932514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/beepIA$queryCreator.coverage" NAME="queryCreator Coverage Results" MODIFIED="1731029071009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/openAIConfig" />
     <SUITE FILE_PATH="coverage/beepIA$router.coverage" NAME="router Coverage Results" MODIFIED="1732621737525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/router" />
     <SUITE FILE_PATH="coverage/beepIA$AppIA.coverage" NAME="AppIA Coverage Results" MODIFIED="1732906241288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

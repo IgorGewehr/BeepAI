@@ -1,0 +1,38 @@
+Log iniciado em 2025-01-07 10:21:08
+
+Todos os prints, erros e logs estão sendo gravados em: C:\Users\igorg\PycharmProjects\BeepAI\logsAI\log_2025-01-07_10-21-08.txt
+
+Traceback (most recent call last):
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\__init__.py", line 1, in <module>
+    from .router import router
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\router.py", line 8, in <module>
+    from openAIConfig import querycreator
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\__init__.py", line 1, in <module>
+    from .embeddings import get_embeddings, check_similarity, answer_context
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\embeddings.py", line 1, in <module>
+    from openAIConfig.openaiInit import initializeOpenAI
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\openaiInit.py", line 1, in <module>
+    from openai import OpenAI
+ModuleNotFoundError: No module named 'openai'
+Traceback (most recent call last):
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\__init__.py", line 1, in <module>
+    from .router import router
+  File "C:\Users\igorg\PycharmProjects\BeepAI\router\router.py", line 8, in <module>
+    from openAIConfig import querycreator
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\__init__.py", line 1, in <module>
+    from .embeddings import get_embeddings, check_similarity, answer_context
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\embeddings.py", line 1, in <module>
+    from openAIConfig.openaiInit import initializeOpenAI
+  File "C:\Users\igorg\PycharmProjects\BeepAI\openAIConfig\openaiInit.py", line 1, in <module>
+    from openai import OpenAI
+ModuleNotFoundError: No module named 'openai'

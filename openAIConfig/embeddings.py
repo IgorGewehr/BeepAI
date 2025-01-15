@@ -7,11 +7,20 @@ from openAIConfig.queryCreator import querycreator
 import pickle
 from pathlib import Path
 
+from utils import read_ia_file
+
 # Caminho base global
 BASE_DIR = os.getcwd()
 ncmF = f'{BASE_DIR}/ncms.pkl'
 # Inicializa o cliente OpenAI
-client = initializeOpenAI()
+# Chama a função read_ia_file() para obter as configurações
+config_data = read_ia_file()
+
+# Extrai a chave da API do dicionário retornado
+api_key = config_data['key']
+
+# Inicializa o cliente OpenAI com a chave da API
+client = initializeOpenAI(api_key)
 
 # Variáveis globais para armazenar o último contexto e seu DataFrame
 last_context = None

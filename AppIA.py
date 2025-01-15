@@ -1,6 +1,7 @@
 import sys
 import os
 from datetime import datetime
+
 # Configuração de logs
 log_dir = os.path.join(os.getcwd(), "logsAI")
 os.makedirs(log_dir, exist_ok=True)  # Cria o diretório "logs" se não existir
@@ -29,8 +30,8 @@ print(f"Log iniciado em {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 print(f"Todos os prints, erros e logs estão sendo gravados em: {log_file}\n")
 
 from fastapi import FastAPI
-import uvicorn
 from router import router
+import uvicorn
 from utils import *
 
 # Inicializa o FastAPI
@@ -42,6 +43,9 @@ if __name__ == "__main__":
     # Gerencia arquivos no início
     manage_main_files()
 
+    port = find_port_in_range(8000, 8888)
+    update_server_port(port)
+
     # Inicializa IA.INI, se necessário
     if not os.path.exists(IA_INI_FILE):
         initialize_ia_file()
@@ -50,7 +54,7 @@ if __name__ == "__main__":
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=8000,
+        port=port,
         log_level="info",
         access_log=True,
         log_config={
