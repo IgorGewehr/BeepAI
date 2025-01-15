@@ -43,12 +43,12 @@ if __name__ == "__main__":
     # Gerencia arquivos no início
     manage_main_files()
 
-    port = find_port_in_range(8000, 8888)
-    update_server_port(port)
-
     # Inicializa IA.INI, se necessário
     if not os.path.exists(IA_INI_FILE):
         initialize_ia_file()
+
+    port = find_port_in_range(8000, 8888)
+    update_server_port(port)
 
     # Executa o servidor Uvicorn
     uvicorn.run(

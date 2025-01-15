@@ -4,25 +4,41 @@ import random
 import socket
 
 
-key = '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'
+key = 'OPEN-AI KEY'
 IA_INI_FILE = "ia.ini"
+APP_IA_EXE = 'AppIA.exe'
 
 def read_ia_file():
     """
     Lê os valores atuais do arquivo ia.ini.
+    Se AppIA.exe for mais novo que ia.ini, deleta ia.ini e executa initialize_ia_file.
     """
-    if not os.path.exists(IA_INI_FILE):
-        initialize_ia_file()
 
-    config = configparser.ConfigParser()
-    config.read(IA_INI_FILE)
+    try:
+        # Verifica se AppIA.exe existe e se é mais novo que ia.ini
+        if os.path.exists(APP_IA_EXE) and os.path.exists(IA_INI_FILE):
+            app_time = os.path.getmtime(APP_IA_EXE)
+            ini_time = os.path.getmtime(IA_INI_FILE)
+            if app_time > ini_time:
+                os.remove(IA_INI_FILE)
+                initialize_ia_file()
 
-    # Converte os valores para inteiros ou floats
-    ncm = float(config['USAGE']['ncm'])
-    ia = float(config['USAGE']['ia'])
-    key = str(config['USAGE']['key'])
+        if not os.path.exists(IA_INI_FILE):
+            initialize_ia_file()
 
-    return {'ncm': ncm, 'ia': ia, 'key': key}
+        config = configparser.ConfigParser()
+        config.read(IA_INI_FILE)
+
+        # Converte os valores para inteiros ou floats
+        ncm = float(config['USAGE']['ncm'])
+        ia = float(config['USAGE']['ia'])
+        key = str(config['USAGE']['key'])
+
+        return {'ncm': ncm, 'ia': ia, 'key': key}
+
+    except Exception as e:
+        print(f"Erro ao ler o arquivo ia.ini: {e}")
+        return None  # Ou você pode levantar a exceção novamente: raise e
 
 def update_server_port(port):
     """
